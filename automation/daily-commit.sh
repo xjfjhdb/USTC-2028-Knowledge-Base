@@ -11,5 +11,6 @@ fi
 
 git add .
 git commit -m "Day$DAY_NUMBER update: $DATE"
-git push origin main
+GIT_SSH_COMMAND="ssh -i $HOME/.ssh/ustc_auto" git push origin main
+
 echo "Daily commit completed at $(date)" >> "$JOURNAL_FILE"
