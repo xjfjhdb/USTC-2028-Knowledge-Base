@@ -9,6 +9,9 @@ if [ ! -f "$JOURNAL_FILE" ]; then
   sed -i "s/YYYY-MM-DD/$DATE/" "$JOURNAL_FILE"
 fi
 
+# 生成连续性协议
+~/USTC-2028-Journey/continuity-protocol.sh
+
 git add .
 git commit -m "Day$DAY_NUMBER update: $DATE"
 GIT_SSH_COMMAND="ssh -i $HOME/.ssh/ustc_auto" git push origin main
